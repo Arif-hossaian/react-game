@@ -1,26 +1,73 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react"
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+const SlotM = (props) =>{
+  //let x = "😄";
+  //let y = "😄";
+  //let z = "🧡";
+
+//let x = props.x;
+//let y = props.y;
+//let z = props.z;
+
+let {x,y,z} = props; //object distructering//
+
+if(( x === y ) && ( y === z )){
+  return(
+    <>
+      <div className="style_inner">
+        <h1>
+          {x} {y} {z}
+        </h1>
+
+        <h1>This is matching</h1>
+        <hr />
+      </div>
+    </>
+  )
 }
+else{
+  return(
+    <>
+      <div className="style_inner">
+        <h1>
+          {x} {y} {z}
+        </h1>
+
+        <h1>This is not matching</h1>
+        <hr />
+      </div>
+    </>
+  )
+}
+}
+
+const App = () =>{
+  return(
+    <>
+      <h1 className="heading_style"> 
+      🎰 Welcome to our <span style={{fontWeight:"bold"}}>slot Machine game</span> 🎰</h1>
+     
+     <div className="slotmachine">
+      <SlotM  
+        x = "😄"
+        y = "😄"
+        z = "😄"
+      />
+      <SlotM 
+         x = "😄"
+        y = "😡"
+        z = "🎈"
+      />
+      <SlotM 
+        x = "😄"
+        y = "💘"
+        z = "🐯"
+      />
+      </div>
+    </>
+  )
+}
+
 
 export default App;
